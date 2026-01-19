@@ -7,19 +7,56 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <style>
-        body{
-            font-family: roboto;
-        }
+    body{
+        font-family: roboto;
+    }
 
-        .hero-text{
-            position: absolute;
-            top: 50%;
-            left: 10%;
-            transform: translateY(-50%);
-            background: rgba(0,0,0,0.4);
-            color: white;
-            padding: 20px;
-        }
+
+    .hero img {
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.4);
+      color: white;
+      padding: 20px;
+    }
+
+    .product-card img {
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .LookBook img,
+    .LookBook video {
+      height: 70vh;
+      object-fit: cover;
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .card-img-top {
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+    }
+
     </style>
 </head>
 <body>
@@ -30,7 +67,7 @@
             ☰
         </button>
 
-        <div class="collpase navbar-collapse" id="navMenu">
+        <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item"><a class="nav-link" href="#Products">Products</a></li>
                 <li class="nav-item"><a class="nav-link" href="#LookBook">LookBook</a></li>
@@ -40,7 +77,7 @@
 
         <button class="btn btn-outline-light position-relative">
             🛒
-            <span class="badge bg-gray cart-badge">0</span>
+            <span class="badge bg-secondary cart-badge">0</span>
         </button>
         </div>
     </div>
@@ -70,5 +107,217 @@
             <span class="carousel-control-next-icon"></span>
         </div>
     </div>
+
+    <section id="Products" class="container my-5">
+        <h2 class="mb-4 text-center">Featured Products</h2>
+
+        <div class="row">
+            <div class="col-md-3 mb-4 product-card">
+                <div class="card h-100">
+                    <img src="https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg" class="card-img-top">
+                <div class="card-body">
+                    <h6>Leather Jacket</h6>
+                    <p>₹2000</p>
+                    <button class="btn btn-sm btn-outline-secondary">Black</button>
+                    <button class="btn btn-sm btn-outline-secondary">Blue</button>
+                    <br><br>
+                    <button class="btn btn-sm btn-dark mt-auto">Add To Cart</button>
+                </div>
+            </div>
+            </div>
+
+        <div class="col-md-3 mb-4 product-card">
+            <div class="card h-100">
+                    <img src="https://images.pexels.com/photos/2983462/pexels-photo-2983462.jpeg" class="card-img-top">
+            <div class="card-body">
+                <h6>Denim Shirt</h6>
+                <p>₹1500</p>
+                <button class="btn btn-sm btn-outline-secondary">Light</button>
+                <button class="btn btn-sm btn-outline-secondary">Dark</button>
+                <br><br>
+                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
+                </div>
+            </div>
+            </div>
+
+        <div class="col-md-3 mb-4 product-card">
+            <div class="card h-100">
+                <img src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg" class="card-img-top">
+            <div class="card-body">
+                <h6>Sneakers</h6>
+                <p>3000</p>
+                <button class="btn btn-sm btn-outline-secondary">White</button>
+                <button class="btn btn-sm btn-outline-secondary">Grey</button>
+                <br><br>
+                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
+                </div>
+            </div>
+            </div>
+
+        <div class="col-md-3 mb-4 product-card">
+            <div class="card h-100">
+                <img src="https://images.pexels.com/photos/2983463/pexels-photo-2983463.jpeg" class="card-img-top">
+            <div class="card-body">
+                <h6>Summer Dress</h6>
+                <p>₹2500</p>
+                <button class="btn btn-sm btn-outline-secondary">Red</button>
+                <button class="btn btn-sm btn-outline-secondary">Yellow</button>
+                <br><br>
+                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
+                </div>
+            </div>
+            </div>
+
+        <div class="col-md-3 mb-4 product-card">
+            <div class="card h-100">
+                <img src="https://images.pexels.com/photos/2983467/pexels-photo-2983467.jpeg" class="card-img-top">
+            <div class="card-body">
+                <h6>Sneakers</h6>
+                <p>3000</p>
+                <button class="btn btn-sm btn-outline-secondary">White</button>
+                <button class="btn btn-sm btn-outline-secondary">Grey</button>
+                <br><br>
+                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
+                </div>
+            </div>
+            </div>
+
+        <div class="col-md-3 mb-4 product-card">
+            <div class="card h-100">
+                <img src="https://images.pexels.com/photos/1308311/pexels-photo-1308311.jpeg" class="card-img-top">
+            <div class="card-body">
+                <h6>Sneakers</h6>
+                <p>3000</p>
+                <button class="btn btn-sm btn-outline-secondary">White</button>
+                <button class="btn btn-sm btn-outline-secondary">Grey</button>
+                <br><br>
+                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
+                </div>
+            </div>
+            </div>
+
+        <div class="col-md-3 mb-4 product-card">
+            <div class="card h-100">
+                <img src="https://images.pexels.com/photos/2983465/pexels-photo-2983465.jpeg" class="card-img-top">
+            <div class="card-body">
+                <h6>Sneakers</h6>
+                <p>3000</p>
+                <button class="btn btn-sm btn-outline-secondary">White</button>
+                <button class="btn btn-sm btn-outline-secondary">Grey</button>
+                <br><br>
+                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
+                </div>
+            </div>
+            </div>
+
+        <div class="col-md-3 mb-4 product-card">
+            <div class="card h-100">
+                <img src="https://images.pexels.com/photos/2983466/pexels-photo-2983466.jpeg" class="card-img-top">
+            <div class="card-body">
+                <h6>Sneakers</h6>
+                <p>3000</p>
+                <button class="btn btn-sm btn-outline-secondary">White</button>
+                <button class="btn btn-sm btn-outline-secondary">Grey</button>
+                <br><br>
+                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
+                </div>
+            </div>
+            </div>
+
+        <div class="col-md-3 mb-4 product-card">
+            <div class="card h-100">
+                <img src="https://images.pexels.com/photos/2983466/pexels-photo-2983466.jpeg" class="card-img-top">
+            <div class="card-body">
+                <h6>Sneakers</h6>
+                <p>3000</p>
+                <button class="btn btn-sm btn-outline-secondary">White</button>
+                <button class="btn btn-sm btn-outline-secondary">Grey</button>
+                <br><br>
+                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
+                </div>
+            </div>
+            </div>
+
+
+        <div class="col-md-3 mb-4 product-card">
+            <div class="card h-100">
+                <img src="https://images.pexels.com/photos/2983468/pexels-photo-2983468.jpeg" class="card-img-top">
+            <div class="card-body">
+                <h6>Sneakers</h6>
+                <p>3000</p>
+                <button class="btn btn-sm btn-outline-secondary">White</button>
+                <button class="btn btn-sm btn-outline-secondary">Grey</button>
+                <br><br>
+                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
+                </div>
+            </div>
+            </div>
+
+        <div class="col-md-3 mb-4 product-card">
+            <div class="card h-100">
+                <img src="https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg" class="card-img-top">
+            <div class="card-body">
+                <h6>Sneakers</h6>
+                <p>3000</p>
+                <button class="btn btn-sm btn-outline-secondary">White</button>
+                <button class="btn btn-sm btn-outline-secondary">Grey</button>
+                <br><br>
+                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-md-3 mb-4 product-card">
+            <div class="card h-100">
+                <img src="https://images.pexels.com/photos/1542085/pexels-photo-1542085.jpeg" class="card-img-top">
+            <div class="card-body">
+                <h6>Sneakers</h6>
+                <p>3000</p>
+                <button class="btn btn-sm btn-outline-secondary">White</button>
+                <button class="btn btn-sm btn-outline-secondary">Grey</button>
+                <br><br>
+                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
+                </div>
+            </div>
+            </div>
+            
+            </div>
+    </section>
+
+<section id="LookBook" class="lookbook">
+  <h2 class="text-center mb-3">Lookbook</h2>
+
+  <div id="lookbookCarousel" class="carousel slide">
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img src="https://picsum.photos/1200/600?20" class="w-100">
+      </div>
+
+      <div class="carousel-item">
+        <video autoplay muted loop class="w-100">
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4">
+        </video>
+      </div>
+
+      <div class="carousel-item">
+        <img src="https://picsum.photos/1200/600?21" class="w-100">
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev" data-bs-target="#lookbookCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" data-bs-target="#lookbookCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</section>
+
+    <footer class="text-center p-4 bg-light mt-5">
+    <p>© 2026 FashionCo</p>
+    </footer>
+
 </body>
 </html>

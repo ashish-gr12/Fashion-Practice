@@ -1,0 +1,616 @@
+body{
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color:linen;
+}
+
+.header{
+    position:fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    height: 90px;
+    z-index: 1;
+}
+
+.left-section{
+    display: flex;
+    width: 500px;
+}
+
+.middle-section{
+    width: 800px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.middle-section a{
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.right-section{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 300px;
+}
+
+.header-para{
+    font-size: 20px;
+    color: white;
+    margin-top: 30px;
+    margin-left:38px;
+}
+
+.header-link{
+    font-size: 20px;
+    font-style: oblique;
+}
+
+
+.header-button{
+    padding:13px;
+    margin-right: 80px;
+    background-color: rgb(255, 13, 13);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.intro-block{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 550px;
+    background-color: rgb(255, 35, 35);
+    margin-top: 90px;
+}
+
+.intro-para1{
+    font-weight: bold;
+    color: white;
+    font-size: 50px;
+    margin-left: 200px;
+    width: 100px;
+}
+
+.intro-para2{
+    font-size: 18px;
+    color: white;
+    margin-left: 200px;
+    width: 350px;
+}
+
+.order{
+    padding: 20px;
+    margin-left: 200px;
+    margin-top: 23px;
+    border-radius: 6px;
+    border: none;
+    border-style: hidden;
+    font-size: 15px;
+    background-color:rgb(255, 255, 112);
+    cursor: pointer;;
+}
+
+
+.chef-div{
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+}
+.chef-img{
+    height: 300px;
+    margin-top: 80px;
+    margin-left: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.chef-para{
+    font-size: 18px;
+    color: rgb(12, 10, 10);
+    margin-top: 130px;
+    margin-left: 100px;
+    line-height: 30px;
+    width: 900px;
+}
+
+.explore-div{
+    background-color:rgb(242, 38, 38);
+    height: 900px;
+    padding-top: 50px;
+}
+
+.explore-para{
+    font-size: 35px;
+    font-style: italic;
+    text-align: center;
+}
+
+.explore-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 25px;
+    row-gap: 30px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 120px;
+}
+
+.explore-box{
+    background-color:rgb(241, 194, 75);
+    height: 300px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.explore-box:hover{
+    background-color:rgb(42, 42, 42);
+    height: 300px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.pizza-img{
+    height: 200px;
+    border-radius:30px;
+}
+
+.pizza-img2{
+    height: 185px;
+    border-radius: 30px;
+    margin-top: 5px;
+}
+
+.pizza-img3{
+    height: 173px;
+    border-radius: 30px;
+    margin-top: 7px;
+}
+
+.pizza-img4{
+    height: 160px;
+    border-radius: 30px;
+    margin-top: 20px;
+}
+
+.hamburger{
+    display: flex;
+    flex-direction: row;
+    background-color: beige;
+    height: 400px;
+}
+
+.hamburger-img{
+    width: 700px;
+}
+
+.ham-img{
+     margin-left: 200px;
+     height: 230px;
+     border-radius: 50%;
+     margin-top: 80px;
+}
+
+.ham-para1{
+    font-size: 17px;
+    width: 210px;
+    margin-top: 50px;
+}
+
+.deal{
+    font-size: 30px;
+    color:burlywood;
+    font-weight: bold;
+}
+.ham-para2{
+    font-size: 17px;
+}
+
+.dollar{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.ham-para3{
+    width: 400px;
+}
+
+.burger_message{
+    display: flex;
+    flex-direction: row ;
+    height: 300px;
+    background-color: cadetblue;
+}
+
+.onion_pizza{
+    display: flex;
+    flex-direction: row;
+}
+
+.onion_img{
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.onion_para{
+    font-size: 20px;
+    margin-top: 100px;
+    margin-left: 20px;
+    font-weight: bold;
+    width: 200px;
+    text-align: center;
+}
+
+.order_onion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 25px;
+}
+
+.garlic-img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+.client-div{
+    font-size: 70px;
+    color:mintcream;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+
+.review-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.review-para1{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-left: 500px;
+    font-size: 20px;
+}
+
+.review-para2{
+    font-size: 30px;
+    width: 750px;
+    margin-left: 400px;
+}
+
+.review-para3{
+    margin-left: 550px;
+    font-size: 18px;
+}
+
+.review-span{
+    font-size: 12px;
+    font-style: oblique;
+    background-color: wheat;
+    border-style: hidden;
+    border-radius: 3px;
+}
+
+.news-div{
+    height: 200px;
+    background-color: blanchedalmond;
+    padding-top: 50px;
+}
+
+.explore-para{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.news-para{
+    font-size: 25px;
+    text-align: center;
+    color: rgb(255, 30, 30);
+}
+
+.fast-food{
+    margin-right: 100px;
+    margin-left: 70px;
+}
+
+.res-img{
+    height: 200px;
+    width: px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.news-lower-para{
+    font-size: 20px;
+    width: 300px;
+    margin: 10px 10px 10px 90px;
+}
+
+
+.image-box{
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-evenly;
+}
+
+.box1{
+    border-radius: 30px;
+}
+
+.box1-img{
+    height: 200px;
+    width: 320px;
+    border-radius: 4px;
+}
+
+.img-text-span{
+    margin-left: 90px;
+}
+
+.img-text{
+    margin-left: 40px;
+}
+
+.img-text2{
+    width: 270px;
+    margin-left:40px;
+
+}
+
+.box1{
+    height: 400px;
+    background-color:lightcoral;
+}
+
+.insta-img{
+    height: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.shawonetc3{
+    display: flex;
+    flex-direction: column;
+}
+
+.shawonetc3-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.shawonetc3-para-span{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 800;
+    font-variant: small-caps;
+    font-style: oblique;
+}
+
+.shawonetc3-para-sub{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.random-img-div{
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.random-img{
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.email-box{
+    height: 400px;
+    padding:80px 0px 0px 230px;
+}
+
+.email-box-sub{
+    height: 300px;
+    width: 1000px;
+    background-color:slateblue;
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    border-radius: 5px;
+
+}
+
+.email-box-sub-para1{
+    font-size: 30px;
+    text-align: center;
+    margin-left: 100px;
+    width: 400px;
+    margin-top: 60px;
+}
+
+.email-box-sub-para2{
+    width:430px;
+    text-align: center;
+    margin-left: 100px;
+}
+
+.email-box-sub-btn{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.email-input{
+    padding: 15px 90px 15px 90px;
+    border-radius: 10px;
+    border-style: hidden;
+    margin-top: 50px;
+    margin-left: 100px;
+    box-shadow: 4px 7px 9px rgba(0, 0, 0, 0.5);
+    background-color:thistle;
+    cursor: pointer;
+}
+
+.email-subscribe{
+    width: 120px;
+    margin-left: 100px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 3px;
+    border-style: hidden;
+    box-shadow: 4px 7px 10px rgba(0, 0, 0,0.4);
+    cursor: pointer;
+    background-color: rgb(255, 255, 112);
+    margin-top: 10px;
+}
+
+.policy{
+    margin-left: 100px;
+}
+
+.email-btn{
+    padding:5px 10px 5px 10px;
+    margin-right: 12px;
+    vertical-align: text-bottom;
+    cursor: pointer;
+}
+
+.last-block-pizza{
+    display: flex;
+    flex-direction: row;
+    background-color:darkcyan;
+    height: 400px;
+    padding:20px 0px 0px 500px;
+    position: relative;
+}
+
+.last-block-para1{
+    height: 250px;
+    background-color:rgb(255, 51, 51);
+    border-radius: 7px;
+    position: absolute;
+    top: 50px;
+    left: 90px;
+    width: 350px;
+    text-align: center;
+}
+
+.tasteNest{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.tasteNest-time{
+    margin-bottom: 50px;
+}
+
+.last-block-para2{
+    background-color: coral;
+    position: absolute;
+    top: 50px;
+    padding: 10px 30px 80px 30px;
+    border-radius: 7px;
+}
+
+.about-para-pizza{
+    text-align: center;
+    text-decoration: underline;
+}
+
+.last-block-para3{
+    background-color: coral;
+    position: absolute;
+    top: 50px;
+    left: 800px;
+    padding: 10px 30px 57px 30px;
+    border-radius: 7px;
+}
+
+.menu-pizza{
+    text-align: center;
+    text-decoration: underline;
+}
+
+.last-block-para4{
+    background-color: coral;
+    position: absolute;
+    top: 50px;
+    left: 1050px;
+    padding: 10px 30px 50px 30px;
+    border-radius: 7px;
+}
+
+.newsletter{
+    text-align: center;
+}
+
+.newsletter-input{
+    padding: 10px 20px 10px 20px;
+    border-style: hidden;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+.newsletter-button{
+    padding: 10px 15px 10px 15px;
+    margin-top: 20px;
+    border-style: hidden;
+    background-color: rgb(254, 50, 50);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+}
+
+.facebook-span{
+    right: 400px;
+    bottom: 18px;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.instagram-span{
+    right: 200px;
+    bottom: 18px;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: underline;
+}

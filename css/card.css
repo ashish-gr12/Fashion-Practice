@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+    background-color:lightsteelblue;
+}
+
+.profile-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 350px;
+    margin-top: 100px;
+    border: solid;
+    border-color: white;
+    border-style: hidden;
+    background-color: rgb(42, 42, 42);
+    color: white;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 9px 12px 20px rgba(0, 0, 0, 0.7);
+}
+
+.photo{
+    border-radius: 50%;
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.info-para1{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.name{
+    font-weight: bold;
+    color: gray;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.info-para2{
+    width: 300px;
+}
+.role,.bio{
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+
+.info-para3{
+    width: 300px;
+}

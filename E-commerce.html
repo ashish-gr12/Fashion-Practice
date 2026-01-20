@@ -11,10 +11,19 @@
         font-family: roboto;
     }
 
+    .hero{
+        margin-top: 0;
+    }
+
+    .hero .carousel-inner,
+    .hero .carousel-item{
+        height: 60vh;
+    }
 
     .hero img {
-      height: 100vh;
-      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      object-fit:cover;
     }
 
     .hero-text {
@@ -35,12 +44,18 @@
       transform: scale(1.05);
     }
 
-    .LookBook img,
-    .LookBook video {
-      height: 70vh;
+    .lookbook img,
+    .lookbook video {
+      height: 100%;
+      width: 100%;
       object-fit: cover;
     }
 
+
+    .lookbook .carousel-inner,
+    .lookbook .carousel-item{
+        height: 60vh;
+    }
     .cart-badge {
       position: absolute;
       top: 0;
@@ -52,18 +67,28 @@
         object-fit: cover;
     }
 
-    .card-body {
-        display: flex;
-        flex-direction: column;
+    @media(max-width:768px){
+b       .hero .carousel-inner,
+        .hero .carousel-item{
+            height: 35vh;
+        }
     }
+
+    @media(max-width:768px){
+        .lookbook-inner,
+        .lookbook-item{
+            height: 22vh;
+        }
+    }
+
 
     </style>
 </head>
 <body>
-    <nav class="navbar bg-dark navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar bg-dark navbar-expand-lg navbar-dark">
     <div class="container py-2">
         <a class="navbar-brand" href="#">Fashion Co</a>
-        <button class="navbar-toggler" type="button" data-bs-target="collapse" data-bs-target="#navMenu">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
             ☰
         </button>
 
@@ -113,7 +138,7 @@
 
         <div class="row">
             <div class="col-md-3 mb-4 product-card">
-                <div class="card h-100">
+                <div class="card">
                     <img src="https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg" class="card-img-top">
                 <div class="card-body">
                     <h6>Leather Jacket</h6>
@@ -121,13 +146,13 @@
                     <button class="btn btn-sm btn-outline-secondary">Black</button>
                     <button class="btn btn-sm btn-outline-secondary">Blue</button>
                     <br><br>
-                    <button class="btn btn-sm btn-dark mt-auto">Add To Cart</button>
+                    <button class="btn btn-sm btn-dark">Add To Cart</button>
                 </div>
             </div>
             </div>
 
         <div class="col-md-3 mb-4 product-card">
-            <div class="card h-100">
+            <div class="card">
                     <img src="https://images.pexels.com/photos/2983462/pexels-photo-2983462.jpeg" class="card-img-top">
             <div class="card-body">
                 <h6>Denim Shirt</h6>
@@ -135,13 +160,13 @@
                 <button class="btn btn-sm btn-outline-secondary">Light</button>
                 <button class="btn btn-sm btn-outline-secondary">Dark</button>
                 <br><br>
-                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
+                <button class="btn btn-dark btn-sm">Add to Cart</button>
                 </div>
             </div>
             </div>
 
         <div class="col-md-3 mb-4 product-card">
-            <div class="card h-100">
+            <div class="card">
                 <img src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg" class="card-img-top">
             <div class="card-body">
                 <h6>Sneakers</h6>
@@ -149,13 +174,13 @@
                 <button class="btn btn-sm btn-outline-secondary">White</button>
                 <button class="btn btn-sm btn-outline-secondary">Grey</button>
                 <br><br>
-                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
+                <button class="btn btn-dark btn-sm">Add to Cart</button>
                 </div>
             </div>
             </div>
 
         <div class="col-md-3 mb-4 product-card">
-            <div class="card h-100">
+            <div class="card">
                 <img src="https://images.pexels.com/photos/2983463/pexels-photo-2983463.jpeg" class="card-img-top">
             <div class="card-body">
                 <h6>Summer Dress</h6>
@@ -163,13 +188,13 @@
                 <button class="btn btn-sm btn-outline-secondary">Red</button>
                 <button class="btn btn-sm btn-outline-secondary">Yellow</button>
                 <br><br>
-                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
+                <button class="btn btn-dark btn-sm">Add to Cart</button>
                 </div>
             </div>
             </div>
 
         <div class="col-md-3 mb-4 product-card">
-            <div class="card h-100">
+            <div class="card">
                 <img src="https://images.pexels.com/photos/2983467/pexels-photo-2983467.jpeg" class="card-img-top">
             <div class="card-body">
                 <h6>Sneakers</h6>
@@ -177,13 +202,13 @@
                 <button class="btn btn-sm btn-outline-secondary">White</button>
                 <button class="btn btn-sm btn-outline-secondary">Grey</button>
                 <br><br>
-                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
+                <button class="btn btn-dark btn-sm">Add to Cart</button>
                 </div>
             </div>
             </div>
 
         <div class="col-md-3 mb-4 product-card">
-            <div class="card h-100">
+            <div class="card">
                 <img src="https://images.pexels.com/photos/1308311/pexels-photo-1308311.jpeg" class="card-img-top">
             <div class="card-body">
                 <h6>Sneakers</h6>
@@ -191,13 +216,13 @@
                 <button class="btn btn-sm btn-outline-secondary">White</button>
                 <button class="btn btn-sm btn-outline-secondary">Grey</button>
                 <br><br>
-                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
+                <button class="btn btn-dark btn-sm">Add to Cart</button>
                 </div>
             </div>
             </div>
 
         <div class="col-md-3 mb-4 product-card">
-            <div class="card h-100">
+            <div class="card">
                 <img src="https://images.pexels.com/photos/2983465/pexels-photo-2983465.jpeg" class="card-img-top">
             <div class="card-body">
                 <h6>Sneakers</h6>
@@ -205,13 +230,13 @@
                 <button class="btn btn-sm btn-outline-secondary">White</button>
                 <button class="btn btn-sm btn-outline-secondary">Grey</button>
                 <br><br>
-                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
+                <button class="btn btn-dark btn-sm">Add to Cart</button>
                 </div>
             </div>
             </div>
 
         <div class="col-md-3 mb-4 product-card">
-            <div class="card h-100">
+            <div class="card">
                 <img src="https://images.pexels.com/photos/2983466/pexels-photo-2983466.jpeg" class="card-img-top">
             <div class="card-body">
                 <h6>Sneakers</h6>
@@ -219,68 +244,13 @@
                 <button class="btn btn-sm btn-outline-secondary">White</button>
                 <button class="btn btn-sm btn-outline-secondary">Grey</button>
                 <br><br>
-                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
-                </div>
-            </div>
-            </div>
-
-        <div class="col-md-3 mb-4 product-card">
-            <div class="card h-100">
-                <img src="https://images.pexels.com/photos/2983466/pexels-photo-2983466.jpeg" class="card-img-top">
-            <div class="card-body">
-                <h6>Sneakers</h6>
-                <p>3000</p>
-                <button class="btn btn-sm btn-outline-secondary">White</button>
-                <button class="btn btn-sm btn-outline-secondary">Grey</button>
-                <br><br>
-                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
+                <button class="btn btn-dark btn-sm">Add to Cart</button>
                 </div>
             </div>
             </div>
 
 
-        <div class="col-md-3 mb-4 product-card">
-            <div class="card h-100">
-                <img src="https://images.pexels.com/photos/2983468/pexels-photo-2983468.jpeg" class="card-img-top">
-            <div class="card-body">
-                <h6>Sneakers</h6>
-                <p>3000</p>
-                <button class="btn btn-sm btn-outline-secondary">White</button>
-                <button class="btn btn-sm btn-outline-secondary">Grey</button>
-                <br><br>
-                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
-                </div>
-            </div>
-            </div>
-
-        <div class="col-md-3 mb-4 product-card">
-            <div class="card h-100">
-                <img src="https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg" class="card-img-top">
-            <div class="card-body">
-                <h6>Sneakers</h6>
-                <p>3000</p>
-                <button class="btn btn-sm btn-outline-secondary">White</button>
-                <button class="btn btn-sm btn-outline-secondary">Grey</button>
-                <br><br>
-                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
-                </div>
-            </div>
-            </div>
-
-            <div class="col-md-3 mb-4 product-card">
-            <div class="card h-100">
-                <img src="https://images.pexels.com/photos/1542085/pexels-photo-1542085.jpeg" class="card-img-top">
-            <div class="card-body">
-                <h6>Sneakers</h6>
-                <p>3000</p>
-                <button class="btn btn-sm btn-outline-secondary">White</button>
-                <button class="btn btn-sm btn-outline-secondary">Grey</button>
-                <br><br>
-                <button class="btn btn-dark btn-sm mt-auto">Add to Cart</button>
-                </div>
-            </div>
-            </div>
-            
+    
             </div>
     </section>
 

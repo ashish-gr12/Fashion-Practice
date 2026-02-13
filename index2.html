@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexLink CRM | DashBoard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            background-color: #121212;
+        }
+        .sidebar{
+            background-color: #1e1e1e;
+            width: 70px;
+        }
+
+        .sidebar li,
+        .sidebar i{
+            cursor: pointer;
+        }
+
+        .card-dark {
+            background: #1c1c1e;
+            border-radius: 14px;
+            border: none;
+        }
+
+        .card-sub {
+            color: #9ca3af;
+            font-size: 0.85rem;
+        }
+
+        .fake-chart {
+            height: 70px;
+            background: #2a2a2a;
+            border-radius: 8px;
+        }
+
+        .purple-card {
+            background: linear-gradient(180deg, #7c6cff, #6a00ff);
+            border-radius: 18px;
+            color: white;
+        }
+
+        .meeting-item{
+            background:#232325;
+            border-radius:12px;
+            padding:14px;
+        }
+
+        .badge-soft{
+            background:#2f2f35;
+            color:white;
+            border-radius:20px;
+            padding:4px 10px;
+            font-size:12px;
+        }
+
+        .bar-chart{
+            height:260px;
+            display:flex;
+            align-items:flex-end;
+            gap:14px;
+        }
+
+
+
+        .section-card{
+            background:#1c1c1e;
+            border-radius:16px;
+            padding:20px;
+            border:1px solid rgba(255,255,255,0.05);
+        }
+
+        .bar-chart{
+            height:240px;
+            display:flex;
+            align-items:flex-end;
+            gap:14px;
+        }
+
+        .bar{
+            flex:1;
+            border-radius:10px 10px 0 0;
+            background:linear-gradient(180deg,#7c6cff,#4a00e0);
+        }
+
+        .bar.light{
+            opacity:0.45;
+        }
+
+        .order-grid{
+            display:grid;
+            grid-template-columns:repeat(7,1fr);
+            gap:8px;
+        }
+
+        .order-cell{
+            height:26px;
+            background:#2a2a2a;
+            border-radius:6px;
+        }
+
+        .order-cell.active{
+            background:#7c6cff;
+        }
+
+        .pipeline-bar{
+            height:36px;
+            background:#2a2a2a;
+            border-radius:10px;
+            overflow:hidden;
+        }
+
+        .pipeline-fill{
+            height:100%;
+            background:linear-gradient(90deg,#7c6cff,#5b00ff);
+        }
+
+        .data-box{
+            background:#1c1c1e;
+            border-radius:16px;
+            padding:20px;
+            border:1px solid rgba(255,255,255,.05)
+        }
+
+        .table-dark-custom{
+            background:#1c1c1e;
+            color:white
+        }
+
+        .table-dark-custom th,
+        .table-dark-custom td{
+            border-color:#2a2a2a;
+            vertical-align:middle
+        }
+
+        .status-pill{
+            padding:4px 12px;
+            border-radius:20px;
+            font-size:12px
+        }
+
+        .status-active{
+            background:#1f3cff
+        }
+
+        .status-pending{
+            background:#0f5132
+        }
+
+        .task-item{
+            background:#232325;
+            border-radius:12px;
+            padding:14px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between
+        }
+
+        .task-left{
+            display:flex;
+            align-items:center;
+            gap:12px
+        }
+
+        .task-check{
+            width:18px;
+            height:18px;
+            accent-color:#7c6cff
+        }
+
+        .task-done{
+            text-decoration:line-through;
+            opacity:.6
+        }
+
+        .task-tag{
+            padding:4px 10px;
+            border-radius:12px;
+            font-size:12px
+        }
+
+        .tag-blue{
+            background:#1f3cff
+        }
+
+        .tag-green{
+            background:#0f5132
+        }
+
+        .tag-yellow{
+            background:#664d03
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="d-flex vh-100">
+
+            <ul class=" sidebar align-items-center text-white py-4 m-0 d-flex flex-column gap-4 list-unstyled">
+                <img src="./Assets/logo.svg">
+                <li><i class="bi bi-house fs-3"></i></li>
+                <li><i class="bi bi-slack fs-3"></i></li>
+                <li><i class="bi bi-layers fs-3"></i></li>
+                <li><i class="bi bi-people fs-3"></i></li>
+                <li><i class="bi bi-grid fs-3"></i></li>
+                <li><i class="bi bi-code-slash fs-3"></i></li>
+                <li><i class="bi bi-bar-chart fs-3"></i></li>
+                <li class="mt-auto"><i class="bi bi-plus-square fs-3"></i></li>
+                <li><i class="bi bi-box-arrow-left fs-3"></i></li>
+            </ul>
+
+            <div class="flex-grow-1 d-flex flex-column">
+                <nav class="navbar navbar-expand-md p-3 navbar-dark bg-dark sticky-top text-white">
+                <div class="container-fluid d-flex align-items-center gap-4">
+                <form class="d-flex">
+                <input type="text" placeholder="Search Anything" class="px-3 rounded-pill form-control">
+                </form>
+
+                <div class="d-flex align-items-center gap-4 text-white">
+                    <span>Today New Lead</span>
+                    <span class="badge bg-primary rounded-pill text-info">27</span>
+                </div>
+                
+                <div class="d-flex align-items-center gap-3 ms-auto">
+                
+                <div class="d-flex gap-3 fs-5">
+                    <i class="bi bi-sun"></i>   
+                    <i class="bi bi-moon-stars-fill"></i>
+                </div>
+
+                <div class="d-flex gap-3 fs-5">
+                    <i class="bi bi-inbox"></i>
+                    <i class="bi bi-bell-fill"></i>
+                    <i class="bi bi-calendar4-event"></i>
+                </div>
+
+                <div class="dropdown">
+                    <a class="text-decoration-none d-flex align-items-center dropdown-toggle text-white" href="#" data-bs-toggle="dropdown">
+                        <img src="./Assets/chef.jpg" class="rounded-circle me-2" width="32" height="32">
+                    <div class="d-flex flex-column justify-content-center">
+                        <div class="fw-semibold">J Noir</div>
+                        <small class="text-white-50">Manager</small>
+                    </div>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="#">View Profile</a></li>
+                        <li><a class="dropdown-item" href="#">My task</a></li>
+                        <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Upgrade Plan</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="./Login.html">Log Out</a></li>
+                    </ul>
+                </div>
+                </div>
+                </div>
+            </nav>
+
+            <main class="flex-grow-1 p-4 text-white flex-column">
+                <p class="d-flex justify-content-between align-items-left text-secondary">
+                    Home-> DashBoard
+                </p>
+    <div class="row g-4 mb-4">
+
+            <div class="col-lg-3">
+                <div class="card card-dark p-3 text-white">
+                <small class="card-sub">Total Contacts</small>
+                <div class="d-flex align-items-center gap-2 mt-1">
+                    <h3 class="mb-0">5,758</h3>
+                    <span class="badge bg-success">+2.57%</span>
+                </div>
+                <small class="card-sub">Vs last month: 1,195</small>
+                <img src="./Assets/bar.png" class="img-fluid mt-3 p-5">
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card card-dark p-3 text-white">
+                <small class="card-sub">Lead Analytics</small>
+                <div class="d-flex align-items-center gap-2 mt-1">
+                    <h3 class="mb-0">70</h3>
+                    <span class="badge bg-danger">-2.57%</span>
+                </div>
+                <small class="card-sub">Compared to last month</small>
+                <img src="./Assets/graph.png" class="img-fluid mt-3 p-5">
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card card-dark p-3 text-white">
+                <small class="card-sub">Traffic Sources</small>
+                <div class="d-flex gap-2 mt-4">
+                    <div class="fake-chart flex-grow-1"></div>
+                    <div class="fake-chart flex-grow-1"></div>
+                    <div class="fake-chart flex-grow-1"></div>
+                </div>
+                <div class="d-flex flex-column justify-content-evenly align-items-center">
+                    <small class="card-sub">Direct Traffic 27%</small>
+                    <small class="card-sub">Referral Traffic 18%</small>
+                    <small class="card-sub">Social Media 10.30%</small>
+                    <small class="card-sub">Email Traffic 3.20%</small>
+                </div>
+                <div class=" d-flex align-items-center justify-content-between border-top pt-3">
+                    <small class="text-secondary">Annual Report</small>
+                    <button class="btn  btn-primary d-flex text-center">Download</button>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="purple-card p-4 h-100">
+                <h6>Total Earning</h6>
+                <h2 class="mt-3">$5.7m</h2>
+                <small class="opacity-75">673 Orders</small>
+
+                <div class="mt-4">
+                    <div class="mb-2">
+                        Paid 
+                    <span class="float-end">70%</span>
+                    <div class="progress mt-1" style="height:6px">
+                        <div class="progress-bar bg-light w-75"></div>
+                    </div>
+                    </div>
+
+                    <div class="mb-2">
+                        Cancelled 
+                    <span class="float-end">25%</span>
+                    <div class="progress mt-1" style="height:6px">
+                        <div class="progress-bar bg-light w-25"></div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="d-flex float-start pt-3">
+                    <ul>
+                        <li>Paid 70%</li>
+                        <li>Cancelled 25%</li>
+                        <li> Refunded 5%</li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+
+    <div class="row g-4 mt-1">
+            <div class="col-lg-6">
+                <div class="section-card">
+                    <h6 class="mb-2">Revenue</h6>
+                    <h3>$2,56,054.50 <small class="text-success fs-6">+20%</small></h3>
+
+                    <div class="bar-chart mt-4">
+                        <div class="bar" style="height:40%"></div>
+                        <div class="bar" style="height:75%"></div>
+                        <div class="bar" style="height:90%"></div>
+                        <div class="bar" style="height:45%"></div>
+                        <div class="bar" style="height:60%"></div>
+                        <div class="bar" style="height:55%"></div>
+                        <div class="bar" style="height:70%"></div>
+                        <div class="bar" style="height:42%"></div>
+                        <div class="bar" style="height:65%"></div>
+                        <div class="bar" style="height:80%"></div>
+                        <div class="bar" style="height:60%"></div>
+                        <div class="bar" style="height:50%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="section-card">
+                    <h6 class="mb-2">Retention Rate</h6>
+                    <h3>92% <small class="text-success fs-6">+15%</small></h3>
+
+                    <div class="bar-chart mt-4">
+                        <div class="bar light" style="height:45%"></div>
+                        <div class="bar" style="height:70%"></div>
+                        <div class="bar" style="height:65%"></div>
+                        <div class="bar light" style="height:40%"></div>
+                        <div class="bar light" style="height:35%"></div>
+                        <div class="bar" style="height:50%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="section-card">
+                    <h6 class="mb-3">Order By Time</h6>
+
+                    <div class="order-grid">
+                        <div class="order-cell"></div><div class="order-cell"></div><div class="order-cell active"></div>
+                        <div class="order-cell"></div><div class="order-cell"></div><div class="order-cell"></div><div class="order-cell"></div>
+
+                        <div class="order-cell"></div><div class="order-cell active"></div><div class="order-cell"></div>
+                        <div class="order-cell"></div><div class="order-cell"></div><div class="order-cell"></div><div class="order-cell"></div>
+
+                        <div class="order-cell"></div><div class="order-cell"></div><div class="order-cell"></div>
+                        <div class="order-cell active"></div><div class="order-cell"></div><div class="order-cell"></div><div class="order-cell"></div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        <div class="row g-4 mt-1">
+
+            <div class="col-lg-4">
+                <div class="section-card h-100">
+                    <div class="d-flex justify-content-between mb-3">
+                        <h6>Upcoming Meetings</h6>
+                        <i class="bi bi-plus-lg"></i>
+                    </div>
+
+                    <div class="meeting-item mb-3">
+                        <div class="fw-semibold">Team Standup</div>
+                        <small class="text-secondary">Google Meet</small>
+                        <div class="d-flex justify-content-between mt-2">
+                            <span class="badge-soft">Marketing</span>
+                            <small class="text-secondary">06:00 - 07:00</small>
+                        </div>
+                    </div>
+
+                    <div class="meeting-item">
+                        <div class="fw-semibold">Client Discussion</div>
+                        <small class="text-secondary">Zoom Call</small>
+                        <div class="d-flex justify-content-between mt-2">
+                            <span class="badge-soft">Sales</span>
+                            <small class="text-secondary">08:30 - 09:30</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="section-card h-100">
+                    <div class="d-flex justify-content-between mb-3">
+                        <h6>Deals Overview</h6>
+                        <small class="text-success">+15%</small>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <div class="fw-semibold">Closed Deals</div>
+                            <small class="text-secondary">This Month</small>
+                        </div>
+                        <h4 class="mb-0">27</h4>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <div class="fw-semibold">Pipeline Value</div>
+                            <small class="text-secondary">Estimated</small>
+                        </div>
+                        <h4 class="mb-0">$5.2M</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="section-card h-100">
+                    <div class="d-flex justify-content-between mb-3">
+                        <h6>Sales Pipeline</h6>
+                        <small class="text-success">+20%</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <small>Leads</small>
+                            <small>120</small>
+                        </div>
+                        <div class="pipeline-bar">
+                            <div class="pipeline-fill" style="width:75%"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <small>Prospects</small>
+                            <small>85</small>
+                        </div>
+                        <div class="pipeline-bar">
+                            <div class="pipeline-fill" style="width:55%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="d-flex justify-content-between mb-1">
+                            <small>Conversions</small>
+                            <small>42</small>
+                        </div>
+                        <div class="pipeline-bar">
+                            <div class="pipeline-fill" style="width:35%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        <div class="row g-4 mt-4">
+
+        <div class="col-lg-8">
+            <div class="data-box">
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h6 class="mb-0">New Customers</h6>
+
+                <div class="d-flex gap-2">
+                <input
+                    type="text"
+                    class="form-control form-control-sm bg-dark text-white border-0"
+                    placeholder="Search"
+                >
+                <button class="btn btn-sm btn-outline-light">
+                    Add New
+                </button>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-dark-custom table-hover align-middle mb-0 b">
+                <thead>
+                    <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Days</th>
+                    <th>Status</th>
+                    <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                    <td>William Johnson</td>
+                    <td>+1 555 123 4567</td>
+                    <td>john@example.com</td>
+                    <td>2 Days</td>
+                    <td>
+                        <span class="status-pill status-active">Active</span>
+                    </td>
+                    <td><i class="bi bi-three-dots"></i></td>
+                    </tr>
+
+                    <tr>
+                    <td>Benjamin Martinez</td>
+                    <td>+91 98765 43210</td>
+                    <td>jane@example.com</td>
+                    <td>Half Day</td>
+                    <td>
+                        <span class="status-pill status-active">Active</span>
+                    </td>
+                    <td><i class="bi bi-three-dots"></i></td>
+                    </tr>
+
+                    <tr>
+                    <td>Alexander Brown</td>
+                    <td>+44 7700 900123</td>
+                    <td>alex@example.com</td>
+                    <td>4 Days</td>
+                    <td>
+                        <span class="status-pill status-pending">Pending</span>
+                    </td>
+                    <td><i class="bi bi-three-dots"></i></td>
+                    </tr>
+
+                    <tr>
+                    <td>Michael Davis</td>
+                    <td>+61 412 345 678</td>
+                    <td>mike@example.com</td>
+                    <td>2 Days</td>
+                    <td>
+                        <span class="status-pill status-active">Active</span>
+                    </td>
+                    <td><i class="bi bi-three-dots"></i></td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center small text-secondary mt-3">
+                <span>Showing 1 to 4 entries</span>
+                <div class="d-flex gap-2">
+                <button class="btn btn-sm btn-dark">1</button>
+                <button class="btn btn-sm btn-outline-secondary">2</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="data-box">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h6 class="mb-0">Task Update</h6>
+                <button class="btn btn-sm btn-outline-light">
+                New Task
+                </button>
+            </div>
+
+            <div class="task-item mb-2">
+                <div class="task-left">
+                <input type="checkbox" class="task-check">
+                <span>Prepare financial report</span>
+                </div>
+                <small>04:25 PM</small>
+            </div>
+
+            <div class="task-item mb-2">
+                <div class="task-left">
+                <input type="checkbox" class="task-check" checked>
+                <span class="task-done">Develop marketing strategy</span>
+                </div>
+                <small>04:25 PM</small>
+            </div>
+
+            <div class="task-item mb-2">
+                <div class="task-left">
+                <input type="checkbox" class="task-check">
+                <span>Update website content</span>
+                </div>
+                <small>04:25 PM</small>
+            </div>
+
+            <div class="task-item">
+                <div class="task-left">
+                <input type="checkbox" class="task-check" checked>
+                <span class="task-done">Reply to customers</span>
+                </div>
+                <small>04:25 PM</small>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        </div>
+        </main>
+        </div>
+    </div>
+</body>
+</html>
